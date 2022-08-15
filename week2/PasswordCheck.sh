@@ -16,7 +16,6 @@ mkdir -p $folderName
 read -sp "Type your password: " pass_var
 echo 
 # Turn the password into a hash
-echo $pass_var | sha256sum
 echo $pass_var | sha256sum > secret.txt
 
 # save the user’s password in a file called 'secret.txt' 
