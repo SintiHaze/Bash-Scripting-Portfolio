@@ -8,14 +8,15 @@
 
 # Pulls the hashed password stored in secret.txt
 get_sha256sum() {
-    echo -n $1 | sha256sum | cut -f 1 -d ' '
+    echo -n $1 | sha256sum | cut -f 1 -d ' ' # cuts the endspace off of the hashed password that the user inputs
 }
 
 # Gets the hash from the secret.txt file
 secret_sha=$(cat secret.txt)
 
 # Ask's the user to type a secret password (input is hidden and times out within 30 seconds if there is no input)
-read -sp "Type your password: " pass_var
+# (Security feature) Time's out and reflects 'Access Denied' within 30 seconds if the user has not input their password in that timeframe. 
+read -t30 -sp "Type your password: " pass_var
 echo -e '\n'
 
 # Checks the hashed user inputted password against the hash contained in the secret.txt file
