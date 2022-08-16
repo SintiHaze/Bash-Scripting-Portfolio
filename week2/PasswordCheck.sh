@@ -4,25 +4,23 @@
 
 # Author: Jacinta Hayward
 # Date Created: 14/08/2022
-# Date modified: 15/08/2022
+# Date modified: 16/08/2022
+
+# Pulls the hashed password stored in secret.txt
+get_sha256sum() {
+    echo -n $1 | sha256sum | cut -f 1 -d ' '
+}
 
 # Gets the hash from the secret.txt file
-secret=$(cat secret.txt)
+secret_sha=$(cat secret.txt)
 
 # Ask's the user to type a secret password (input is hidden and times out within 30 seconds if there is no input)
 read -sp "Type your password: " pass_var
-echo
-
-# Converts the users inputted password into a sha256 hash
-passcheck=$pass_var | sha256sum
+echo -e '\n'
 
 # Checks the hashed user inputted password against the hash contained in the secret.txt file
-
-if [ "$passcheck" = "$secret" ]
-then
+if [ "$(get_sha256sum $pass_var)" = "$secret_sha" ]; then
     echo "Access Granted"
-    exit 0
 else
     echo "Access Denied"
-    exit 1
 fi
