@@ -6,7 +6,7 @@
 # Date Created: 14/08/2022
 # Date modified: 16/08/2022
 
-#This function prints a given error
+#This function prints when the answer is correct
 
 printCorrect()
 
@@ -15,6 +15,8 @@ printCorrect()
     echo -e "\033[32mCORRECT! \033[0m $1"
 
 }
+
+# This function prints when the answer is incorrect.
 
 printError()
 
@@ -26,7 +28,7 @@ printError()
 
 
 
-#This function will get a value between the 2nd and 3rd arguments
+# This function will get a value between the 2nd and 3rd arguments
 
 getNumber()
 
@@ -52,7 +54,7 @@ getNumber()
 
 }
 
-
+# Introduction text and instructions
 
 echo "Welcome to the Guessing Game!"
 
