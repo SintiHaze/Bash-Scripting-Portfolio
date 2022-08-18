@@ -1,5 +1,4 @@
 #!/usr/bin/python3
- 
 # Brute Force
 
 # Author: Jacinta Hayward
@@ -15,19 +14,21 @@ characterList = list(character)
 
 # Asks the user to input a password
 password = input("\033[1;32m Please enter your password: ")
+
+# Brute Force function
 guess = ""
 while (guess != password):
-    guess = random.choices(characterList,k=len(password)) # The random function allows the system to generate random characters as a way to guess the password.
-    guess = "".join(guess)
+    guess = random.choices(characterList, k=len(password))  # The random function allows the system to generate random characters to guess the password.
+    guess = "". join(guess)
 
 # Displays an ASCII image
 print("""\
- ___________________________________ 
+ ___________________________________
 |  _______________________________  |
 | | PASSWORD SUCCESSFULLY CRACKED | |
 | |_______________________________| |
 |___________________________________|
     """)
 
-# Displays the password that was cracked by this code. 
+# Displays the password that was cracked by this code.
 print("\033[1;32m Your password is: " + guess)
