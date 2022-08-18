@@ -5,6 +5,12 @@
 # Date Created: 14/08/2022
 # Date modified: 17/08/2022
 
+print("""\
+
+█▓▒▒░░░BRUTEFORCE░░░▒▒▓█
+
+    """)
+
 # Imports the random and time functions
 import random
 import time
@@ -14,7 +20,7 @@ character = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789`~!@#
 characterList = list(character)
 
 # Asks the user to input a password
-password = input("\033[1;32m Please enter your password: ")
+password = input("\033[1;92m Please enter your password: ")
 
 # Uses the time function to count the seconds elapsed whilst the password guesses are generated. 
 startTime = time.time() 
@@ -35,5 +41,5 @@ print("""\
     """)
 
 # Displays the password that was cracked by this code.
-print("\033[1;32m Your password is: " + guess)
-print("That took", elapsedTime, "seconds to crack!")
+print("\033[1;96m Your password is: " + guess)
+print("\033[1;94m That took", elapsedTime, "seconds to crack!")
