@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Guessing Game
+
 # Author: Jacinta Hayward
 # Date Created: 19/08/2022
 # Date modified: 19/08/2022
@@ -17,9 +19,9 @@ num_guess=0            # Number of guesses made by the player
 while [ $guess -ne $answer ]; do            # If the guess is not equal to the answer variable, it will prompt the player to make a guess.
     echo -n "What is the number? " ; read guess
     if (( guess < answer )) ; then          # If the players guess is less than than the answer variable, then it will print "Higher"
-    echo "...Higher!"
+    echo "...Too High!"
     elif (( guess > answer )) ; then        # If the players guess is greater than the answer variable, then it will print "Lower"
-    echo "...Lower!"
+    echo "...Too Low!"
     fi
     num_guess=$(($num_guess + 1))           # Keeps track of the number of guesses made by the player.
 done
@@ -27,13 +29,12 @@ done
 # Displays text to say that the player has successfully guessed the number and displays how many guesses were made. 
 echo -e "\033[32m CORRECT! You guessed $answer in $num_guess guesses."
 
-# Save your score to a text file. 
+# Save your score to a text file with amount of guesses and the name of the player. 
 read -p "Please enter your name: " name
-echo $name $num_guess >> scores.txt
+echo $num_guess $name  >> scores.txt 
 
-# Prints list of scores that are saved in the text file. 
+# Prints and sorts list of scores that are saved in the text file from lowest to highest amount of guesses. 
 echo -e "\nPrevious scores:" 
-cat scores.txt
+sort -n scores.txt
 
-# Exits the game.
 exit 0

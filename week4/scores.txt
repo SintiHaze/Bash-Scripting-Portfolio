@@ -1,4 +1,6 @@
-Sinti 5
-[A[BSinti 1
-Edgar 4
-Bob 4
+5 Sinti
+1 Sinti
+4 Edgar
+5 Bob
+9 weasel
+4 Peter
