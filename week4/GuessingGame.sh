@@ -19,9 +19,9 @@ num_guess=0            # Number of guesses made by the player
 while [ $guess -ne $answer ]; do            # If the guess is not equal to the answer variable, it will prompt the player to make a guess.
     echo -n "What is the number? " ; read guess
     if (( guess < answer )) ; then          # If the players guess is less than than the answer variable, then it will print "Higher"
-    echo "...Too High!"
-    elif (( guess > answer )) ; then        # If the players guess is greater than the answer variable, then it will print "Lower"
     echo "...Too Low!"
+    elif (( guess > answer )) ; then        # If the players guess is greater than the answer variable, then it will print "Lower"
+    echo "...Too High!"
     fi
     num_guess=$(($num_guess + 1))           # Keeps track of the number of guesses made by the player.
 done
@@ -34,7 +34,11 @@ read -p "Please enter your name: " name
 echo $num_guess $name  >> scores.txt 
 
 # Prints and sorts list of scores that are saved in the text file from lowest to highest amount of guesses. 
-echo -e "\nPrevious scores:" 
+echo -e "\033[94m \nPrevious scores: " 
 sort -n scores.txt
+
+# Prints the player with the least amount of guesses.
+echo -e "\nThe top player is: "
+sort -n scores.txt | head -1
 
 exit 0

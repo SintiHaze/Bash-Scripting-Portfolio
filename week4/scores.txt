@@ -4,3 +4,10 @@
 5 Bob
 9 weasel
 4 Peter
+1 Kaya
+3 Ronald
+3 Tina
+2 Sarah
+1 Bob
+2 Taylor
+6 Gina
