@@ -21,8 +21,10 @@ while [ $guess -ne $answer ]; do            # If the guess is not equal to the a
     elif (( guess > answer )) ; then        # If the players guess is greater than the answer variable, then it will print "Lower"
     echo "...Lower!"
     fi
-    num_guess=$(($num_guess + 1))
+    num_guess=$(($num_guess + 1))           # Keeps track of the number of guesses made by the player.
 done
+
+# Displays text to say that the player has successfully guessed the number and displays how many guesses were made. 
 echo -e "\033[32m CORRECT! You guessed $answer in $num_guess guesses."
 
 # Save your score to a text file. 
@@ -33,4 +35,5 @@ echo $name $num_guess >> scores.txt
 echo -e "\nPrevious scores:" 
 cat scores.txt
 
+# Exits the game.
 exit 0
