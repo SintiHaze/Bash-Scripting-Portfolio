@@ -3,7 +3,7 @@
 
 # Author: Jacinta Hayward
 # Date Created: 14/08/2022
-# Date modified: 17/08/2022
+# Date modified: 22/08/2022
 
 print("""\
 
@@ -15,8 +15,8 @@ print("""\
 import random
 import time
 
-# Sets the different characters that can be used in the inputted password. Includes letters, numbers and special characters which take makes the password longer to crack.
-character = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789`~!@#$%^&*()_-+=[{]}|:;'\",<.>/? "
+# Sets the different characters that can be used in the inputted password.
+character = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
 characterList = list(character)
 
 # Asks the user to input a password

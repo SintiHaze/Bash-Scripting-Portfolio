@@ -4,69 +4,50 @@
 
 # Author: Jacinta Hayward
 # Date Created: 14/08/2022
-# Date modified: 16/08/2022
+# Date modified: 22/08/2022
 
-# Color  Variables
-green='\e[32m'
-blue='\e[34m'
-clear='\e[0m'
-red='\e[31'
-
-# Color Functions
-ColorGreen(){
-	echo -ne $green$1$clear
-}
-ColorBlue(){
-	echo -ne $blue$1$clear
-}
+# Introduces the script in light blue
+echo -e "\x1b[1;34mWelcome to the MegaMenu!"
 
 # The PS3 variable is used to request input for which option the user would like to select.  
 PS3="Enter a number to select an option: "
+
+# Provides the menu options that the user can choose from with the case statement. The options are listed from 1-8.
 menu_choice=("Create folder" "Copy folder" "Set password" "Calculator" "Create week folders" "Check filenames" "Download a file" "Exit")
 select option in "${menu_choice[@]}"; do
     case $option in
         "Create folder")
             sh ./foldermaker.sh
-            echo "A folder will be created"
-            # call a function to bring up the script that does this.
+            echo -e "\033[0;34m' A folder will be created"
             ;;
         "Copy folder" )
             sh ./folderCopier.sh
-            echo "A folder will be copied" 
-            # call a function to bring up the script that does this.
             ;;
         "Set password" )
             sh ./setPassword.sh
-            echo "Your password will be set"
-            # call a function to bring up the script that does this.
             ;;
         
         "Calculator" )
             sh ./Calculator.sh
-            echo "Your password will be set"
-            # call a function to bring up the script that does this.
             ;;
         
         "Create week folders" )
-            echo "Your password will be set"
-            # call a function to bring up the script that does this.
+            sh ./foldermaker.sh
             ;;
         
         "Check filenames" )
-            echo "Your password will be set"
-            # call a function to bring up the script that does this.
+            sh ./downloader.sh
             ;;
         
         "Download a file" )
-            echo "Your password will be set"
-            # call a function to bring up the script that does this.
+            sh ./filenames.sh
             ;;
         
         "Exit" )
-            echo "User requested exit"
+            echo -e "\033[0;35m' Goodbye!"
             exit
             ;;
-        *) echo "invalid option".;;
+        *) echo -e "\033[41m' invalid option".;; # If the user inputs a character other than 1-8. it will prompt them to enter an option again and display 'Invalid option'.
     esac
 done
 
