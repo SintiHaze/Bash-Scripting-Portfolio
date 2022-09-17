@@ -3,6 +3,8 @@ NIST Scraper - README file
 Author: Jacinta Hayward
 Last date modified: 21/08/2022
 
+I have made a bash script that will scrape the API for the NIST CVE Vulnerability Index (National Vulnerability Database) and calculate the average impact score of CVE's for the selected timeframe. The script then formats the data from the API into an excel spreadsheet. As a security measure, this script requires the input of the correct password to be able to access it. The password is encrypted with a modern hashing algorithm (SHA256).
+
 HOW TO INSTALL:
 - Firstly, you will need to install jq package. 
 - You can do this by entering the following command through the command line using the following: sudo apt install jq
