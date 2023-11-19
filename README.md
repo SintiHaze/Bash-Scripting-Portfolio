@@ -1,5 +1,4 @@
 # Portfolio
-# Author: Jacinta Hayward
 # Date Modified: 22/08/2022
 
 # Contents
